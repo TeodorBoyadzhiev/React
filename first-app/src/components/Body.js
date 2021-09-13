@@ -9,13 +9,18 @@ class Body extends Component {
         }
     }
 
+    resetCounter(e) {
+        this.setState((e) => ({ count: 0 }));
+    }
+
     render() {
         return (
-            <div style={{textAlign:"center"}}>
-                <h3 style={{textAlign:"center"}}>Counter</h3>
-                <button style={{marginRight:"5px"}} onClick={(e) => this.setState((oldState) => ({ count: oldState.count - 1 }))}>-</button>
+            <div style={{ textAlign: "center" }}>
+                <h3 style={{ textAlign: "center" }}>Counter</h3>
+                <button style={{ marginRight: "5px" }} onClick={(e) => this.setState((oldState) => ({ count: oldState.count - 1 }))}>-</button>
                 <span>{this.state.count}</span>
-                <button style={{marginLeft:"5px"}} onClick={(e) => this.setState((oldState) => ({ count: oldState.count + 1 }))}>+</button>
+                <button style={{ marginLeft: "5px" }} onClick={(e) => this.setState((oldState) => ({ count: oldState.count + 1 }))}>+</button><br></br>
+                <button style={{ margin: "5px" }} onClick={this.resetCounter.bind(this)}>Reset</button>
             </div>
         );
     }
