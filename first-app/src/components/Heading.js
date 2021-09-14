@@ -12,6 +12,7 @@ function Heading(props) {
                     <li style={{ listStyle: "none" }}>Login</li>
                 </ul>
             </nav>
+           
         </header>
     );
 }
