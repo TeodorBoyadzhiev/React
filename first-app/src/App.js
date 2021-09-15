@@ -5,6 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Register from './components/Register';
 import Login from './components/Login';
+import notFound from './components/NotFound';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/about' component={About} />
           <Route path='/register' component={Register} />
           <Route path='/login' component={Login} />
+          <Route  component={notFound} />
         </Switch>
         <Body />
 
