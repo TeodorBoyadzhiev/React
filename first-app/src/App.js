@@ -1,10 +1,9 @@
 import './App.css';
 import Heading from './components/Heading';
-import Body from './components/Body';
 import Home from './components/Home';
-import About from './components/About';
 import Register from './components/Register';
 import Login from './components/Login';
+import Content from './components/Content';
 import notFound from './components/NotFound';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -15,14 +14,11 @@ function App() {
         <Heading />
         <Switch>
           <Route path='/' component={Home} exact />
-          <Route path='/about' component={About} />
+          <Route path='/content' component={Content} />
           <Route path='/register' component={Register} />
           <Route path='/login' component={Login} />
-          <Route  component={notFound} />
+          <Route component={notFound} />
         </Switch>
-        <Body />
-
-
       </div>
     </BrowserRouter>
 

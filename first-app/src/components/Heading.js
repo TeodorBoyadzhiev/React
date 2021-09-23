@@ -8,7 +8,7 @@ function Heading(props) {
             <nav>
                 <ul className="nav">
                     <li style={{ listStyle: "none" }}><Link to="/">Home</Link></li>
-                    <li style={{ listStyle: "none" }}><Link to="/about">About Us</Link></li>
+                    <li style={{ listStyle: "none" }}><Link to="/content">Content</Link></li>
                     <li style={{ listStyle: "none" }}><Link to="/register">Register</Link></li>
                     <li style={{ listStyle: "none" }}><Link to="/login">Login</Link></li>
                 </ul>
