@@ -1,0 +1,19 @@
+{
+    "tutorials": [
+        {
+            "id": 1,
+            "title": "React Tutorial",
+            "description": "Fetch Data"
+        },
+        {
+            "id": 2,
+            "title": "Angular Tutorial",
+            "description": "DRYN DRYN"
+        },
+        {
+            "id": 3,
+            "title": "Svelte Tutorial",
+            "description": "Brand New Front-End Framework"
+        }
+    ]
+}
