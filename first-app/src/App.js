@@ -5,6 +5,8 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Content from './components/Content';
 import notFound from './components/NotFound';
+import Tutorial from './components/Tutorial';
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
         <Heading />
         <Switch>
           <Route path='/' component={Home} exact />
-          <Route path='/content' component={Content} />
+          <Route path='/content' component={Content} exact />
           <Route path='/register' component={Register} />
           <Route path='/login' component={Login} />
           <Route component={notFound} />
