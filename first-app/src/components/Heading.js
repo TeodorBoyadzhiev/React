@@ -1,5 +1,5 @@
 import './Heading.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Heading(props) {
 
@@ -7,16 +7,17 @@ function Heading(props) {
         <header style={{ display: "flex" }}>
             <nav>
                 <ul className="nav">
-                    <li style={{ listStyle: "none" }}><Link to="/">Home</Link></li>
-                    <li style={{ listStyle: "none" }}><Link to="/content">Content</Link></li>
-                    <li style={{ listStyle: "none" }}><Link to="/register">Register</Link></li>
-                    <li style={{ listStyle: "none" }}><Link to="/login">Login</Link></li>
+                    <NavLink className="li" activeClassName="active-navigation" exact={true} to="/">Home</NavLink>
+                    <NavLink className="li" activeClassName="active-navigation" exact={true} to="/content">Conetent</NavLink>
+                    <NavLink className="li" activeClassName="active-navigation" exact={true} to="/register">Register</NavLink>
+                    <NavLink className="li" activeClassName="active-navigation" exact={true} to="/login">Login</NavLink>
                 </ul>
             </nav>
-           
+
         </header>
     );
 }
+
 
 
 

@@ -11,7 +11,7 @@ export class Content extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/tutorials')
+        fetch('http://localhost:5000/tutorials')
             .then(res => res.json())
             .then(tutorials => {
                 this.setState(() => ({ tutorials }))
