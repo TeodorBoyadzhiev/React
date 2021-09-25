@@ -5,7 +5,6 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Content from './components/Content';
 import notFound from './components/NotFound';
-import Tutorial from './components/Tutorial';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
