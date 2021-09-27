@@ -1,50 +1,51 @@
 import React from 'react'
+import { Component } from 'react'
+import Pet from '../Pet/Pet'
 
-import  NavCategory  from './NavCategory/NavCategory'
+import NavCategory from './NavCategory/NavCategory'
 
-export default function Categories() {
-    return (
-        <section className="dashboard">
-            <h1>Dashboard</h1>
+class Categories extends Component {
 
-            <NavCategory />
+    constructor(props) {
+        super(props)
 
-            <ul className="other-pets-list">
-                <li className="otherPet">
-                    <h3>Name: Gosho</h3>
-                    <p>Category: Cat</p>
-                    <p className="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" /></p>
-                    <p className="description">This is not my cat Gosho</p>
-                    <div className="pet-info">
-                        <a href="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
-                        <a href="#"><button className="button">Details</button></a>
-                        <i className="fas fa-heart"></i> <span> 2</span>
-                    </div>
-                </li>
-                <li className="otherPet">
-                    <h3>Name: Gosho</h3>
-                    <p>Category: Cat</p>
-                    <p className="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png" /></p>
-                    <p className="description">This is not my cat Gosho</p>
-                    <div className="pet-info">
-                        <a href="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
-                        <a href="#"><button className="button">Details</button></a>
-                        <i className="fas fa-heart"></i> <span> 2</span>
-                    </div>
 
-                </li>
-                <li className="otherPet">
-                    <h3>Name: Kiro</h3>
-                    <p>Category: Dog</p>
-                    <p className="img"><img src="https://assets.stickpng.com/images/580b57fbd9996e24bc43bbde.png" /></p>
-                    <p className="description">This is my dog Kiro</p>
-                    <div className="pet-info">
-                        <a href="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
-                        <a href="#"><button className="button">Details</button></a>
-                        <i className="fas fa-heart"></i> <span> 4</span>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    )
+        this.state = {
+            pets: []
+        }
+    }
+
+
+    componentDidMount() {
+        fetch('http://localhost:5000/pets')
+            .then(res => res.json())
+            .then(res => this.setState({ pets: res }))
+            .catch(err => console.log(err));
+    }
+
+
+    render() {
+        return (
+            <section className="dashboard">
+                <h1>Dashboard</h1>
+
+                <NavCategory />
+
+                <ul className="other-pets-list">
+                    
+                    {this.state.pets.map(pet => <Pet
+                        key={pet.id}
+                        name={pet.name}
+                        description={pet.description}
+                        category={pet.category}
+                        imageURL={pet.imageURL}
+                        likes={pet.likes}
+                    />)}
+                </ul>
+            </section>
+        )
+    }
 }
+
+
+export default Categories
