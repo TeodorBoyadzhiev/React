@@ -1,14 +1,17 @@
 import React from 'react'
 import * as petService from '../../Services/petService'
 
-export default function CreatePet() {
+export default function CreatePet({history}) {
 
     const onSubmitCreateHandler = (e) => {
         e.preventDefault();
         
         const { name, description, imageURL, category } = e.target;
 
-        petService.createPet(name.value,description.value,imageURL.value,category.value)
+        petService.createPet(name.value, description.value, imageURL.value, category.value)
+            .then(() => {
+                history.push('/');
+        })
     }
     return (
         <div>
