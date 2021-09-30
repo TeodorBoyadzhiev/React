@@ -20,10 +20,10 @@ const PetDetails = ({ match }) => {
             </p>
             <p className="img"><img alt="" src={pet.imageURL} /></p>
             <p className="description">{pet.description}</p>
-            <div class="pet-info">
-                <Link to={`/pets/edit/${match.params.petId}`}><button class="button">Edit</button></Link>
-                <Link to="#"><button class="button">Delete</button></Link>
-                <i class="fas fa-heart"></i> <span>5</span>
+            <div className="pet-info">
+                <Link to={`/pets/edit/${match.params.petId}`}><button className="button">Edit</button></Link>
+                <Link to="#"><button className="button">Delete</button></Link>
+                <i className="fas fa-heart"></i> <span>5</span>
             </div>
         </section>
     )
