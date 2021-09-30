@@ -12,18 +12,28 @@ const PetDetails = ({ match }) => {
             .then(res => setPet(res));
     }, [match])
 
+    const onClickPetHandler = () => {
+        let incrementedLikes = pet.likes + 1;
+
+        petService.pet(match.params.petId ,incrementedLikes)
+            .then(() => {
+                setPet(state => ({ ...state, likes: incrementedLikes }))
+            })
+    }
+
     return (
         <section className="detailsOtherPet">
             <h3>{pet.name}</h3>
-            <p>Pet counter: {pet.likes} <Link to="/"><button className="button"><i className="fas fa-heart"></i>
-                Pet</button></Link>
+            <p>Pet counter: {pet.likes}
+
+                <button className="button" onClick={onClickPetHandler}><i className="fas fa-heart"></i>Pet</button>
+
             </p>
             <p className="img"><img alt="" src={pet.imageURL} /></p>
             <p className="description">{pet.description}</p>
             <div className="pet-info">
                 <Link to={`/pets/edit/${match.params.petId}`}><button className="button">Edit</button></Link>
                 <Link to="#"><button className="button">Delete</button></Link>
-                <i className="fas fa-heart"></i> <span>5</span>
             </div>
         </section>
     )

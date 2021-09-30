@@ -21,7 +21,8 @@ export const createPet = (petName, description, imageURL, category) => {
         name: petName,
         description: description,
         imageURL: imageURL,
-        category: category
+        category: category,
+        likes: 0
     }
 
     return fetch(url, {
@@ -39,7 +40,18 @@ export const editPet = (petId, pet) => {
     return fetch(`${url}/${petId}`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'},
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(pet)
-        })
+    })
+}
+
+export const pet = (petId, likes) => {
+   return fetch(`${url}/${petId}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({likes})
+    })
 }
