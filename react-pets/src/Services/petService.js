@@ -55,3 +55,12 @@ export const pet = (petId, likes) => {
         body: JSON.stringify({likes})
     })
 }
+
+export const deletePet = (petId) => {
+    return fetch(`${url}/${petId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-type': 'application/json'
+        },
+    })
+}
