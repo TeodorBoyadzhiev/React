@@ -9,9 +9,9 @@ export default function Pet(props) {
             <p className="img"><img alt="" src={props.imageURL} /></p>
             <p className="description">{props.description}</p>
             <div className="pet-info">
-                <Link to="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></Link>
+                {/* <Link to="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></Link> */}
                 <Link to={`/pets/details/${props.id}`}><button className="button">Details</button></Link>
-                <i className="fas fa-heart"></i> <span> {props.likes}</span>
+                {/* <i className="fas fa-heart"></i> <span> {props.likes}</span> */}
             </div>
         </li>
     )

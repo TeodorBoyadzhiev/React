@@ -10,7 +10,7 @@ export default function EditPet({ match, history }) {
     useEffect(() => {
         petService.getOne(match.params.petId)
             .then(res => setPet(res))
-    }, []);
+    }, [match.params.petId]);
 
     const onDescriptionSubmit = (e) => {
         e.preventDefault();
