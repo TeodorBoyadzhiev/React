@@ -25,12 +25,22 @@ class Categories extends Component {
 
     componentDidUpdate(prevProps) {
         const category = this.props.match.params.category;
-        
+
         if (prevProps.match.params.category === category) {
             return;
         }
         petService.getAll(category)
             .then(res => this.setState(() => ({ pets: res, currentCategory: category })))
+    }
+
+    onClickPetHandler(petId, likes) {
+
+        petService.pet(petId,likes + 1)
+            .then((result) => {
+                this.setState(state => ({ pets: state.pets.map(x => x.id === petId ? { ...x, likes: result.likes + 1 } : x) }))
+            
+        })
+
     }
 
     render() {
@@ -50,6 +60,7 @@ class Categories extends Component {
                         category={pet.category}
                         imageURL={pet.imageURL}
                         likes={pet.likes}
+                        onClickPetHandler={this.onClickPetHandler.bind(this, pet.id, pet.likes)}
                     />
                     )}
                 </ul>

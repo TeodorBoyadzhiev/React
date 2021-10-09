@@ -5,6 +5,7 @@ export const getAll = (category = '') => {
 
     return fetch(petsUrl)
         .then(res => res.json())
+        .then(pets => pets.map(x => ({ ...x, likes: Number(x.likes) })))
         .catch(err => console.log(err))
 }
 
@@ -47,12 +48,12 @@ export const editPet = (petId, pet) => {
 }
 
 export const pet = (petId, likes) => {
-   return fetch(`${url}/${petId}`, {
+    return fetch(`${url}/${petId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({likes})
+        body: JSON.stringify({ likes })
     })
 }
 
