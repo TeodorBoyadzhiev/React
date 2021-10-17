@@ -6,6 +6,8 @@ import Categories from './components/Categories/Categories';
 import PetDetails from './components/PetDetails/PetDetails';
 import CreatePet from './components/CreatePet/CreatePet';
 import EditPet from './components/EditPet/EditPet';
+import Login from './components/Core/Login/Login';
+import Register from './components/Core/Register/Register';
 import './utils/firebase';
 
 import './App.css';
@@ -21,6 +23,8 @@ function App() {
         <Route path="/pets/details/:petId" component={PetDetails} />
         <Route path="/pets/edit/:petId" component={EditPet} />
         <Route path="/pets/create" component={CreatePet} />
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
       </Switch>
 
       <Footer />

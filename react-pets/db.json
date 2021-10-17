@@ -6,7 +6,7 @@
       "description": "My dog Yara. 2 months old. doggy hjkhjk",
       "imageURL": "https://cdn1-www.dogtime.com/assets/uploads/2017/09/pit-bull-puppies-2.jpg",
       "category": "Dog",
-      "likes": 7,
+      "likes": 8,
       "_acl": {
         "creator": "5bb0874caccb650325e0227b"
       },
@@ -21,7 +21,7 @@
       "description": "This is my parrot Koko. He is one year old. He likes to sing a lot.",
       "imageURL": "https://cdn.omlet.co.uk/images/originals/fischer's-lovebird.jpg",
       "category": "Parrot",
-      "likes": 5,
+      "likes": 14,
       "_acl": {
         "creator": "5bb088003e67d9190597f9a6"
       },
@@ -36,7 +36,7 @@
       "description": "This is my horse Spirit. He is 7 years old. He likes to run around like crazy and go to horse races.",
       "imageURL": "https://bransbyhorses.co.uk/wp-content/uploads/2016/03/Sophie.jpg",
       "category": "Other",
-      "likes": 4,
+      "likes": 7,
       "_acl": {
         "creator": "5bb088003e67d9190597f9a6"
       },
@@ -51,7 +51,7 @@
       "description": "This is my cat Tomy. He is 1 year old and likes to play with my snake Snaky",
       "imageURL": "https://www.ethosvet.com/wp-content/uploads/Untitled-3-01-1.png",
       "category": "Cat",
-      "likes": 4,
+      "likes": 5,
       "_acl": {
         "creator": "5bb08c01eb7615589b4f360e"
       },
@@ -66,7 +66,7 @@
       "description": "This is my cat Timmy. He is 2 months old and is very playful.йкнкй",
       "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ft0ZilfNJ5aTX0e7xCwfjJf9C7vtuJizVQ&usqp=CAU",
       "category": "Cat",
-      "likes": 7,
+      "likes": 9,
       "_acl": {
         "creator": "5bb0874caccb650325e0227b"
       },
@@ -81,7 +81,7 @@
       "description": "This is my cat Lilly. She is 2 years old and is lazy",
       "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqKEU7KZMm1hBU5p4abxibo1kcXjexkoXnnA&usqp=CAU",
       "category": "Cat",
-      "likes": 10,
+      "likes": 11,
       "_acl": {
         "creator": "5bb08c01eb7615589b4f360e"
       },
@@ -96,7 +96,7 @@
       "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK5E4q69oOKBckQwY9qYbqODVOizjcN9HxNFr4vC-fAJ-qM-ZBag6rc8FQ7O_9C5Vy1oA&usqp=CAU",
       "category": "Reptile",
       "id": "KpBPl8e",
-      "likes": 0
+      "likes": 2
     }
   ]
 }

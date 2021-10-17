@@ -1,5 +1,7 @@
-import React from 'react'
+import {useState} from 'react'
 import { Link } from 'react-router-dom'
+
+import * as petService from '../../Services/petService'
 
 export default function Pet({
     name,
@@ -7,9 +9,18 @@ export default function Pet({
     imageURL,
     description,
     id,
-    likes,
-    onClickPetHandler
+    likes
 }) {
+    const [currentLikes, setCurrentLikes] = useState(likes);
+
+    const onClickPetHandler = () => {
+
+        petService.pet(id, likes + 1)
+            .then((result) => {
+                setCurrentLikes(result.likes);
+            });
+
+    }
 
     return (
         <li className="otherPet">
@@ -18,10 +29,17 @@ export default function Pet({
             <p className="img"><img alt="" src={imageURL} /></p>
             <p className="description">{description}</p>
             <div className="pet-info">
-                <button className="button" onClick={onClickPetHandler}><i className="fas fa-heart"></i> Pet</button>
+                <i className="fas fa-heart"></i> <span>{currentLikes}</span>
+                <button className="button" onClick={onClickPetHandler}><i className="fas fa-heart"></i> Pet</button><br />
                 <Link to={`/pets/details/${id}`}><button className="button">Details</button></Link>
-                <i className="fas fa-heart"></i> <span>{likes}</span>
             </div>
+            <style jsx>
+                {`
+                .otherPet {
+                    max-width:30%;
+                }
+                `}
+            </style>
         </li>
     )
 }

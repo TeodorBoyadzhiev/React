@@ -33,15 +33,7 @@ class Categories extends Component {
             .then(res => this.setState(() => ({ pets: res, currentCategory: category })))
     }
 
-    onClickPetHandler(petId, likes) {
-
-        petService.pet(petId,likes + 1)
-            .then((result) => {
-                this.setState(state => ({ pets: state.pets.map(x => x.id === petId ? { ...x, likes: result.likes + 1 } : x) }))
-            
-        })
-
-    }
+    
 
     render() {
         return (
@@ -60,7 +52,6 @@ class Categories extends Component {
                         category={pet.category}
                         imageURL={pet.imageURL}
                         likes={pet.likes}
-                        onClickPetHandler={this.onClickPetHandler.bind(this, pet.id, pet.likes)}
                     />
                     )}
                 </ul>
