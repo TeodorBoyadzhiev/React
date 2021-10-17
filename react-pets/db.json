@@ -3,7 +3,7 @@
     {
       "id": "5bb0888ee1d636567dc9f627",
       "name": "Yara",
-      "description": "My dog Yara. 2 months old. doggy hjkhjk",
+      "description": "My dog Yara. 2 months old.",
       "imageURL": "https://cdn1-www.dogtime.com/assets/uploads/2017/09/pit-bull-puppies-2.jpg",
       "category": "Dog",
       "likes": 8,
@@ -63,7 +63,7 @@
     {
       "id": "5bb08d1353e0a859203643e6",
       "name": "Timmy",
-      "description": "This is my cat Timmy. He is 2 months old and is very playful.йкнкй",
+      "description": "This is my cat Timmy. He is 2 months old and is very playful.",
       "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ft0ZilfNJ5aTX0e7xCwfjJf9C7vtuJizVQ&usqp=CAU",
       "category": "Cat",
       "likes": 9,
