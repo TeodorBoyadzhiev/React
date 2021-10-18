@@ -33,7 +33,7 @@ export default function Login({history}) {
 					<p className="field">
 						<label htmlFor="email">Email</label>
 						<span className="input">
-							<input type="text" name="email" id="email" placeholder="email" />
+							<input type="text" name="email" id="email" placeholder="Email" />
 							<span className="actions"></span>
 							<i className="fas fa-user"></i>
 						</span>
