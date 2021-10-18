@@ -13,7 +13,6 @@ export default function Login({history}) {
 
 		signInWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
-				console.log('Sign in ', userCredential.user.email)
 				history.push('/');
 
 			})
@@ -21,8 +20,6 @@ export default function Login({history}) {
 				console.log(err);
 			});
 
-
-		console.log(`Email: ${email} with password: ${password}`)
 	}
 
 

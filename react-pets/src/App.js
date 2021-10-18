@@ -12,20 +12,37 @@ import './utils/firebase';
 
 import './App.css';
 import { auth } from './utils/firebase';
+import { useEffect, useState } from 'react/cjs/react.development';
+import { onAuthStateChanged } from '@firebase/auth';
 
 function App() {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (authUser) => {
+      setUser(authUser)
+    })
+  }, []);
+
+  const authInfo = {
+    isAuthenticated: Boolean(user),
+    email: user?.email
+  }
+
+
   return (
     <div className="container">
-      <Header />
+      <Header {...authInfo} />
 
       <Switch>
-        <Route path="/" exact component={Categories} />
-        <Route path="/categories/:category" component={Categories} />
-        <Route path="/pets/details/:petId" component={PetDetails} />
-        <Route path="/pets/edit/:petId" component={EditPet} />
-        <Route path="/pets/create" component={CreatePet} />
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
+        <Route path="/" exact component={Categories} {...authInfo} />
+        <Route path="/categories/:category" component={Categories} {...authInfo} />
+        <Route path="/pets/details/:petId" component={PetDetails} {...authInfo} />
+        <Route path="/pets/edit/:petId" component={EditPet} {...authInfo} />
+        <Route path="/pets/create" component={CreatePet} {...authInfo} />
+        <Route path="/register" component={Register} {...authInfo} />
+        <Route path="/login" component={Login} {...authInfo} />
         <Route path="/logout" render={props => {
           auth.signOut();
           return <Redirect to="/" />

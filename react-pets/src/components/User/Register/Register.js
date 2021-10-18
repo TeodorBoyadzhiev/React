@@ -13,7 +13,6 @@ export default function Register({history}) {
 
 		createUserWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
-				console.log('Register', userCredential.user.email)
 				history.push('/');
 			})
 			.catch(err => {
