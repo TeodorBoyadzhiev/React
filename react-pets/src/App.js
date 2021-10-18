@@ -1,16 +1,17 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Header from './components/Core/Header/Header';
+import Footer from './components/Core/Footer/Footer';
 import Categories from './components/Categories/Categories';
 import PetDetails from './components/PetDetails/PetDetails';
 import CreatePet from './components/CreatePet/CreatePet';
 import EditPet from './components/EditPet/EditPet';
-import Login from './components/Core/Login/Login';
-import Register from './components/Core/Register/Register';
+import Login from './components/User/Login/Login';
+import Register from './components/User/Register/Register';
 import './utils/firebase';
 
 import './App.css';
+import { auth } from './utils/firebase';
 
 function App() {
   return (
@@ -25,6 +26,11 @@ function App() {
         <Route path="/pets/create" component={CreatePet} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
+        <Route path="/logout" render={props => {
+          auth.signOut();
+          return <Redirect to="/" />
+        }
+        } />
       </Switch>
 
       <Footer />
