@@ -55,6 +55,14 @@ class Categories extends Component {
                     />
                     )}
                 </ul>
+                <style jsx>
+                    {`
+                    .other-pets-list {
+                        display:flex;
+                        flex-wrap:wrap;
+                    }
+                    `}
+                </style>
             </section>
         )
     }
