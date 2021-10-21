@@ -53,7 +53,6 @@ export default function Login({history}) {
 				{`
                 body {
 	background: #FFF;
-	padding: 1rem;
 }
 
 form {

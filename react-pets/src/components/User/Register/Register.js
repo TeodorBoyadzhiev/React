@@ -52,7 +52,6 @@ export default function Register({history}) {
 				{`
                 body {
 	background: #FFF;
-	padding: 1rem;
 }
 
 form {
