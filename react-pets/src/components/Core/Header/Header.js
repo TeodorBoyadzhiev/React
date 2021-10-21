@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 
-export default function Header({ isAuthenticated, email }) {
+import AuthContext from "../../../contexts/AuthContext";
+
+export default function Header() {
+
+    const { isAuthenticated, email } = useContext(AuthContext);
+
     return (
         <>
             <header id="site-header">
