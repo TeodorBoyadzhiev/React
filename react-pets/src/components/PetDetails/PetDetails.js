@@ -42,6 +42,19 @@ const PetDetails = ({ match, history }) => {
                 <Link to={`/pets/edit/${match.params.petId}`}><button className="button">Edit</button></Link>
                 <Link to="#" onClick={onClickDeleteHandler}><button className="button">Delete</button></Link>
             </div>
+            <style jsx>
+                {`
+                .img > img{
+                    height:14em;
+                    border-radius:40px 0px 40px 0px;
+                }
+
+                .button {
+                    margin:10px;
+                }
+
+                `}
+            </style>
         </section>
     )
 }

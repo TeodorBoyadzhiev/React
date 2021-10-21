@@ -63,7 +63,6 @@ export default function Pet({
                 .img > img{
                     height:14em;
                     border-radius:40px 0px 40px 0px;
-
                 }
 
                 .button {

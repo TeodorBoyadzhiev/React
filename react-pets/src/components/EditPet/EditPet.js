@@ -45,6 +45,14 @@ export default function EditPet({ match, history }) {
                 <InputError>{errorMessage}</InputError>
                 <button className="button"> Save</button>
             </form>
+            <style jsx>
+                {`
+                .img > img{
+                    height:14em;
+                    border-radius:40px 0px 40px 0px;
+                }
+                `}
+            </style>
         </section>
     )
 }
