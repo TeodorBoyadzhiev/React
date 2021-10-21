@@ -48,7 +48,7 @@
     {
       "id": "5bb08c9453e0a859203640fe",
       "name": "Tommy",
-      "description": "This is my cat Tomy. He is 1 year old and likes to play with my snake Snaky",
+      "description": "This is my cat Tomy. He is 1 year old and likes to play with my snake Snaky.",
       "imageURL": "https://www.ethosvet.com/wp-content/uploads/Untitled-3-01-1.png",
       "category": "Cat",
       "likes": 6,
@@ -78,7 +78,7 @@
     {
       "id": "5bb096b542b2cd1521b211be",
       "name": "Lilly",
-      "description": "This is my cat Lilly. She is 2 years old and is lazy",
+      "description": "This is my cat Lilly. She is 2 years old and is lazy.",
       "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqKEU7KZMm1hBU5p4abxibo1kcXjexkoXnnA&usqp=CAU",
       "category": "Cat",
       "likes": 11,

@@ -139,7 +139,6 @@ h3 {
 .my-pets .my-pets-list,
 .dashboard .other-pets-list {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
 }
 

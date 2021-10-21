@@ -62,8 +62,7 @@ export default function Pet({
 
                 .img > img{
                     height:14em;
-                    border:none;
-                    box-shadow: 1px 1px 11px -2px black;
+                    border-radius:40px 0px 40px 0px;
 
                 }
 
