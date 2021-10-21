@@ -8,12 +8,15 @@ import CreatePet from './components/CreatePet/CreatePet';
 import EditPet from './components/EditPet/EditPet';
 import Login from './components/User/Login/Login';
 import Register from './components/User/Register/Register';
-import './utils/firebase';
 
+import './utils/firebase';
 import './App.css';
+
 import { auth } from './utils/firebase';
 import { useEffect, useState } from 'react/cjs/react.development';
 import { onAuthStateChanged } from '@firebase/auth';
+
+import AuthContext from './contexts/AuthContext';
 
 function App() {
 
@@ -33,24 +36,26 @@ function App() {
 
   return (
     <div className="container">
-      <Header {...authInfo} />
+      <AuthContext.Provider value={authInfo}>
+        <Header />
 
-      <Switch>
-        <Route path="/" exact component={Categories} {...authInfo} />
-        <Route path="/categories/:category" component={Categories} {...authInfo} />
-        <Route path="/pets/details/:petId" component={PetDetails} {...authInfo} />
-        <Route path="/pets/edit/:petId" component={EditPet} {...authInfo} />
-        <Route path="/pets/create" component={CreatePet} {...authInfo} />
-        <Route path="/register" component={Register} {...authInfo} />
-        <Route path="/login" component={Login} {...authInfo} />
-        <Route path="/logout" render={props => {
-          auth.signOut();
-          return <Redirect to="/" />
-        }
-        } />
-      </Switch>
+        <Switch>
+          <Route path="/" exact component={Categories} />
+          <Route path="/categories/:category" component={Categories} />
+          <Route path="/pets/details/:petId" component={PetDetails} />
+          <Route path="/pets/edit/:petId" component={EditPet} />
+          <Route path="/pets/create" component={CreatePet} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
+          <Route path="/logout" render={props => {
+            auth.signOut();
+            return <Redirect to="/" />
+          }
+          } />
+        </Switch>
 
-      <Footer />
+        <Footer />
+      </AuthContext.Provider>
     </div>
   );
 }
