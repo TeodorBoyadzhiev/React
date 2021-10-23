@@ -1,7 +1,6 @@
 import React from 'react'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-
 export default function Login({history}) {
 
 	const onSubmitHandler = (e) => {

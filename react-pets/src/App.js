@@ -1,3 +1,6 @@
+import './utils/firebase';
+import './App.css';
+
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Header from './components/Core/Header/Header';
@@ -9,14 +12,13 @@ import EditPet from './components/EditPet/EditPet';
 import Login from './components/User/Login/Login';
 import Register from './components/User/Register/Register';
 
-import './utils/firebase';
-import './App.css';
-
 import { auth } from './utils/firebase';
 import { useEffect, useState } from 'react/cjs/react.development';
 import { onAuthStateChanged } from '@firebase/auth';
 
 import AuthContext from './contexts/AuthContext';
+import isAuth from './hoc/isAuth';
+import userExist from './hoc/userExist';
 
 function App() {
 
@@ -42,11 +44,11 @@ function App() {
         <Switch>
           <Route path="/" exact component={Categories} />
           <Route path="/categories/:category" component={Categories} />
-          <Route path="/pets/details/:petId" component={PetDetails} />
-          <Route path="/pets/edit/:petId" component={EditPet} />
-          <Route path="/pets/create" component={CreatePet} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
+          <Route path="/pets/details/:petId" component={isAuth(PetDetails)} />
+          <Route path="/pets/edit/:petId" component={isAuth(EditPet)} />
+          <Route path="/pets/create" component={isAuth(CreatePet)} />
+          <Route path="/register" component={userExist(Register)} />
+          <Route path="/login" component={userExist(Login)} />
           <Route path="/logout" render={props => {
             auth.signOut();
             return <Redirect to="/" />

@@ -61,7 +61,6 @@ export default function CreatePet({history}) {
             <style jsx>{`
             body {
 	background: #FFF;
-	padding: 1rem;
 }
 
 form {
