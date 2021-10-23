@@ -17,8 +17,8 @@ export default function Header() {
                             <Link to="/"> Dashboard </Link>
                             {
                                 isAuthenticated
-                                    ? <><Link className="button" to="/">My Pets</Link>
-                                        <Link className="button" to="/pets/create">Add Pet</Link></>
+                                    ? <><Link className="button" to="/pets/create">Add Pet</Link></>
+                                    //    <Link className="button" to="/">My Pets</Link>
                                     : ''
 
                             }
